@@ -108,8 +108,8 @@ INSTALLED_APPS = [
     'callcentres.apps.CallcentresConfig',
     'autoreports.apps.AutoreportsConfig',
     'housekeeping.apps.HousekeepingConfig',
-#    'freeswitchdb.apps.FreeswitchdbConfig',
-#    'fsterminal.apps.FsterminalConfig',
+    #    'freeswitchdb.apps.FreeswitchdbConfig',
+    #    'fsterminal.apps.FsterminalConfig',
 ]
 
 MIDDLEWARE = [
@@ -199,11 +199,11 @@ DATABASES = {
         'PASSWORD': 'postgres-insecure-abcdef9876543210',
         'HOST': '127.0.0.1',
         'PORT': '5432'
-# removed CONN_MAX_AGE as it was causing a Server 500 error after a uwsgi restart/reload
-# exceptions were:
-#      psycopg2.OperationalError: SSL SYSCALL error: EOF detected
-#      AttributeError: 'SessionStore' object has no attribute '_session_cache'
-#        'CONN_MAX_AGE': 300
+        # removed CONN_MAX_AGE as it was causing a Server 500 error after a uwsgi restart/reload
+        # exceptions were:
+        #      psycopg2.OperationalError: SSL SYSCALL error: EOF detected
+        #      AttributeError: 'SessionStore' object has no attribute '_session_cache'
+        #        'CONN_MAX_AGE': 300
     },
     'freeswitch': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -281,7 +281,7 @@ LOGIN_REDIRECT_URL = '/'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-        #'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
     # Use Django's standard `django.contrib.auth` permissions,
@@ -313,12 +313,12 @@ DJANGO_TABLES2_PAGE_RANGE = 8
 
 
 MESSAGE_TAGS = {
-        messages.DEBUG: 'alert-secondary',
-        messages.INFO: 'alert-info',
-        messages.SUCCESS: 'alert-success',
-        messages.WARNING: 'alert-warning',
-        messages.ERROR: 'alert-danger',
- }
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
 # event socket connection info
 EVSKT = ('127.0.0.1', 8021, 'ClueCon')
